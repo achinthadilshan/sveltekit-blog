@@ -6,13 +6,18 @@
 
 	import Header from './Header.svelte'
 	import Footer from './Footer.svelte'
+	import Transition from './Transition.svelte'
+
+	export let data
 </script>
 
 <div class="layout">
 	<Header />
 
 	<main>
-		<slot />
+		<Transition url={data.url}>
+			<slot />
+		</Transition>
 	</main>
 
 	<Footer />
